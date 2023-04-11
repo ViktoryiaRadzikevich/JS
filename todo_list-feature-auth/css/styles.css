@@ -1,0 +1,265 @@
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #05005d;
+  background-color: #89899e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; }
+
+header {
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  box-shadow: 5px -6px 20px black; }
+  header .logo {
+    font-size: 1.5rem;
+    color: #05005d;
+    font-weight: bold;
+    flex-grow: 1; }
+
+.container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 3px;
+  height: 50%;
+  width: 500px;
+  z-index: 2;
+  box-shadow: 5px 5px 20px black;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+button {
+  cursor: pointer; }
+
+@keyframes delBtnJumping {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(0); } }
+.title {
+  position: absolute;
+  bottom: 100%;
+  color: #05005d;
+  display: block;
+  background-color: white;
+  border-radius: 3px;
+  width: 100%;
+  margin-left: -24px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.61); }
+  .title h1 {
+    margin: 5px 0;
+    text-align: center; }
+    .title h1 i {
+      font-size: 24px; }
+
+.add-form form,
+.login-form form,
+.registration-form form {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative; }
+  .add-form form #input-border,
+  .login-form form #input-border,
+  .registration-form form #input-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #05005d;
+    margin-left: -24px;
+    transition: 0.4s; }
+  .add-form form input,
+  .login-form form input,
+  .registration-form form input {
+    flex-grow: 1;
+    height: 32px;
+    border: none;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.733);
+    outline: none;
+    border-radius: 3px 3px 0 0; }
+    .add-form form input:focus::placeholder,
+    .login-form form input:focus::placeholder,
+    .registration-form form input:focus::placeholder {
+      transition: 0.2s;
+      color: rgba(0, 0, 0, 0.2); }
+  .add-form form button[type="submit"],
+  .add-form form .to-registration-btn,
+  .login-form form button[type="submit"],
+  .login-form form .to-registration-btn,
+  .registration-form form button[type="submit"],
+  .registration-form form .to-registration-btn {
+    margin-left: 10px;
+    width: 38px;
+    border: none;
+    background-color: white;
+    color: #05005d;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 2px 2px 6px -1px gray;
+    border: 1px solid rgba(128, 128, 128, 0.288); }
+    .add-form form button[type="submit"]:active,
+    .add-form form .to-registration-btn:active,
+    .login-form form button[type="submit"]:active,
+    .login-form form .to-registration-btn:active,
+    .registration-form form button[type="submit"]:active,
+    .registration-form form .to-registration-btn:active {
+      box-shadow: 1px 1px 6px -1px gray; }
+
+.login-form form,
+.registration-form form {
+  display: flex;
+  flex-direction: column; }
+  .login-form form input,
+  .registration-form form input {
+    margin-bottom: 20px; }
+  .login-form form button[type="submit"],
+  .login-form form .to-registration-btn,
+  .registration-form form button[type="submit"],
+  .registration-form form .to-registration-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+    height: 40px; }
+
+.todo-list,
+.list-of-lists {
+  overflow-y: auto;
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: 10px; }
+  .todo-list::-webkit-scrollbar,
+  .list-of-lists::-webkit-scrollbar {
+    width: 12px; }
+  .todo-list::-webkit-scrollbar-track,
+  .list-of-lists::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(5, 0, 93, 0.2);
+    -webkit-box-shadow: inset 0 0 6px rgba(5, 0, 93, 0.2);
+    border-radius: 3px; }
+  .todo-list::-webkit-scrollbar-thumb,
+  .list-of-lists::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(5, 0, 93, 0.1);
+    box-shadow: inset 0 0 6px rgba(5, 0, 93, 0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(5, 0, 93, 0.4); }
+  .todo-list ol,
+  .list-of-lists ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; }
+    .todo-list ol li,
+    .list-of-lists ol li {
+      display: flex;
+      align-items: center;
+      padding: 10px 8px;
+      border-radius: 3px;
+      margin: 3px 0; }
+      .todo-list ol li input[type="text"],
+      .list-of-lists ol li input[type="text"] {
+        outline: none;
+        border: none;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 4px;
+        font-style: italic;
+        color: #5c5c5c;
+        padding: 0 10px;
+        background-color: rgba(5, 0, 93, 0.1); }
+      .todo-list ol li:nth-child(odd),
+      .list-of-lists ol li:nth-child(odd) {
+        background-color: rgba(5, 0, 93, 0.1); }
+        .todo-list ol li:nth-child(odd) input,
+        .list-of-lists ol li:nth-child(odd) input {
+          background-color: white; }
+        .todo-list ol li:nth-child(odd) button,
+        .list-of-lists ol li:nth-child(odd) button {
+          background-color: rgba(128, 128, 128, 0); }
+      .todo-list ol li:nth-child(even) input,
+      .list-of-lists ol li:nth-child(even) input {
+        background-color: rgba(5, 0, 93, 0.1); }
+      .todo-list ol li.checked,
+      .list-of-lists ol li.checked {
+        background-color: #ddf5b7; }
+        .todo-list ol li.checked span,
+        .list-of-lists ol li.checked span {
+          text-decoration: line-through; }
+        .todo-list ol li.checked .delete-btn,
+        .list-of-lists ol li.checked .delete-btn {
+          animation: delBtnJumping 2s infinite ease; }
+        .todo-list ol li.checked .delete-btn,
+        .todo-list ol li.checked .edit-btn,
+        .list-of-lists ol li.checked .delete-btn,
+        .list-of-lists ol li.checked .edit-btn {
+          background-color: #ddf5b7; }
+      .todo-list ol li span,
+      .todo-list ol li input[type="text"],
+      .todo-list ol li a,
+      .list-of-lists ol li span,
+      .list-of-lists ol li input[type="text"],
+      .list-of-lists ol li a {
+        flex-grow: 1;
+        padding-left: 10px; }
+      .todo-list ol li .delete-btn,
+      .todo-list ol li .edit-btn,
+      .list-of-lists ol li .delete-btn,
+      .list-of-lists ol li .edit-btn {
+        background-color: white;
+        outline: none;
+        border: none;
+        cursor: pointer; }
+        .todo-list ol li .delete-btn.checked,
+        .todo-list ol li .edit-btn.checked,
+        .list-of-lists ol li .delete-btn.checked,
+        .list-of-lists ol li .edit-btn.checked {
+          background-color: #ddf5b7; }
+      .todo-list ol li .delete-btn:hover,
+      .list-of-lists ol li .delete-btn:hover {
+        transition: 0.3s;
+        transform: rotate(360deg); }
+
+.delete-checked-wrapper {
+  display: flex;
+  justify-content: flex-end; }
+.delete-checked-btn {
+  margin-left: 10px;
+  height: 32px;
+  background-color: white;
+  color: #05005d;
+  border-radius: 3px;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 3px 3px 6px -1px gray;
+  border: 1px solid rgba(128, 128, 128, 0.555); }
+  .delete-checked-btn[disabled="true"] {
+    color: rgba(128, 128, 128, 0.658);
+    box-shadow: none;
+    cursor: not-allowed; }
+  .delete-checked-btn:active {
+    box-shadow: 1px 1px 6px -1px gray; }
+
+.error {
+  color: red;
+  font-size: 15px; }
+
+/*# sourceMappingURL=styles.css.map */
